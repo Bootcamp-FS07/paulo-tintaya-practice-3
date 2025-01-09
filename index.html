@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>Tic Tac Toe Game</h1>
+        <br>
         <form id="player-form">
             <div class="input-group">
                 <label for="player1">Player 1:</label>
@@ -18,14 +19,15 @@
                 <label for="player2">Player 2:</label>
                 <input type="text" id="player2" placeholder="Enter player 2 name..." required>
             </div>
-            <button type="submit">Start game</button>
+            <button type="submit" id="start-btn">Start game</button>
             <p id="error-message" class="hidden"></p>
         </form>
     </header>
     <main>
-        <div id="game-board" class="grid"></div>
+        <div id="game-board" class="grid hidden"></div>
         <br>
         <button id="restart-btn" class="hidden">Restart Game</button>
+        <div id="loading" class="hidden">Loading...</div>
     </main>
     <div id="message-modal" class="modal">
         <div class="modal-content">

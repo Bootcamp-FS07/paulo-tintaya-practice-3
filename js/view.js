@@ -18,6 +18,28 @@ function displayError(message) {
     errorElement.classList.remove('hidden');
 }
 
+function showLoading() {
+    const loadingElement = document.getElementById('loading');
+    loadingElement.classList.remove('hidden');
+}
+
+function hideLoading() {
+    const loadingElement = document.getElementById('loading');
+    loadingElement.classList.add('hidden');
+}
+
+function disableForm() {
+    const form = document.getElementById('player-form');
+    form.querySelectorAll('input').forEach(input => input.disabled = true);
+    form.querySelector('button').disabled = true;
+}
+
+function enableForm() {
+    const form = document.getElementById('player-form');
+    form.querySelectorAll('input').forEach(input => input.disabled = false);
+    form.querySelector('button').disabled = false;
+}
+
 document.querySelector('.close-btn').addEventListener('click', function() {
     const modal = document.getElementById('message-modal');
     modal.style.display = 'none';

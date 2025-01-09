@@ -9,6 +9,7 @@
     --button-hover-color: #01579B;
     --button-text-color: #FFFFFF;
     --error-color: #FF5722;
+    --loading-color: #767676;
 }
 
 * {
@@ -64,6 +65,7 @@ main {
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
     gap: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .grid-cell {
@@ -142,6 +144,20 @@ button:focus {
 .error-message {
     color: var(--error-color);
     margin-top: 10px;
+}
+
+#loading {
+    color: var(--loading-color);
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 600px) {
