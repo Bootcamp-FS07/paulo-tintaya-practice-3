@@ -19,6 +19,7 @@
                 <input type="text" id="player2" placeholder="Enter player 2 name..." required>
             </div>
             <button type="submit">Start game</button>
+            <p id="error-message" class="hidden"></p>
         </form>
     </header>
     <main>
@@ -32,9 +33,6 @@
             <p id="message"></p>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2023 Tic Tac Toe by Paulo xd</p>
-    </footer>
     <script>
         const gameBoard = document.getElementById('game-board');
         for (let i = 0; i < 9; i++) {

@@ -8,6 +8,7 @@
     --button-color: #0288D1;
     --button-hover-color: #01579B;
     --button-text-color: #FFFFFF;
+    --error-color: #FF5722;
 }
 
 * {
@@ -136,6 +137,11 @@ button:focus {
 
 .hidden {
     display: none;
+}
+
+.error-message {
+    color: var(--error-color);
+    margin-top: 10px;
 }
 
 @media (min-width: 600px) {
