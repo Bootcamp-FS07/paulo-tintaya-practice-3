@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe by Paulo ;D</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tic Tac Toe Game</h1>
+        <form id="player-form">
+            <label for="player1">Player 1:</label>
+            <input type="text" id="player1" placeholder="Enter player 1 name..." required>
+            <label for="player2">Player 2:</label>
+            <input type="text" id="player2" placeholder="Enter player 2 name..." required>
+            <button type="submit">Start game</button>
+        </form>
+    </header>
+    <main>
+        <div id="game-board" class="grid">
+            <template id="grid-cell-template">
+                <div class="grid-cell"></div>
+            </template>
+            <p id="message"></p>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
