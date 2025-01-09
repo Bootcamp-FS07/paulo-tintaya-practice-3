@@ -2,6 +2,12 @@ document.getElementById('player-form').addEventListener('submit', function(event
     event.preventDefault();
     const player1 = document.getElementById('player1').value;
     const player2 = document.getElementById('player2').value;
+
+    if (player1 === player2) {
+        displayError('Player names cannot be the same.');
+        return;
+    }
+
     initializeGame(player1, player2);
 });
 
@@ -15,7 +21,7 @@ document.getElementById('game-board').addEventListener('click', function(event) 
         if (makeMove(flatIndex)) {
             updateGrid(flatIndex, gameState.currentPlayer === gameState.players[0] ? 'X' : 'O');
             if (checkWin()) {
-                displayMessage(`${gameState.currentPlayer} wins :3`);
+                displayMessage(`${gameState.currentPlayer} wins ;3`);
                 gameState.isGameActive = false;
             } else if (gameState.grid.every(cell => cell)) {
                 displayMessage("It's a tie :|");

@@ -12,6 +12,12 @@ function displayMessage(message) {
     restartBtn.classList.remove('hidden');
 }
 
+function displayError(message) {
+    const errorElement = document.getElementById('error-message');
+    errorElement.textContent = message;
+    errorElement.classList.remove('hidden');
+}
+
 document.querySelector('.close-btn').addEventListener('click', function() {
     const modal = document.getElementById('message-modal');
     modal.style.display = 'none';
@@ -25,8 +31,8 @@ window.addEventListener('click', function(event) {
 });
 
 document.getElementById('restart-btn').addEventListener('click', function() {
-    const player1 = document.getElementById('player1').value;
-    const player2 = document.getElementById('player2').value;
+    const player1 = localStorage.getItem('player1') || document.getElementById('player1').value;
+    const player2 = localStorage.getItem('player2') || document.getElementById('player2').value;
     initializeGame(player1, player2);
     const modal = document.getElementById('message-modal');
     modal.style.display = 'none';
