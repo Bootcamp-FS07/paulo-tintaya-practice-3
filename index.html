@@ -10,23 +10,42 @@
     <header>
         <h1>Tic Tac Toe Game</h1>
         <form id="player-form">
-            <label for="player1">Player 1:</label>
-            <input type="text" id="player1" placeholder="Enter player 1 name..." required>
-            <label for="player2">Player 2:</label>
-            <input type="text" id="player2" placeholder="Enter player 2 name..." required>
+            <div class="input-group">
+                <label for="player1">Player 1:</label>
+                <input type="text" id="player1" placeholder="Enter player 1 name..." required>
+            </div>
+            <div class="input-group">
+                <label for="player2">Player 2:</label>
+                <input type="text" id="player2" placeholder="Enter player 2 name..." required>
+            </div>
             <button type="submit">Start game</button>
         </form>
     </header>
     <main>
-        <div id="game-board" class="grid">
-            <template id="grid-cell-template">
-                <div class="grid-cell"></div>
-            </template>
+        <div id="game-board" class="grid"></div>
+        <br>
+        <button id="restart-btn" class="hidden">Restart Game</button>
+    </main>
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
             <p id="message"></p>
         </div>
-    </main>
+    </div>
     <footer>
-        
+        <p>&copy; 2023 Tic Tac Toe by Paulo xd</p>
     </footer>
+    <script>
+        const gameBoard = document.getElementById('game-board');
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('grid-cell');
+            cell.dataset.index = i;
+            gameBoard.appendChild(cell);
+        }
+    </script>
+    <script src="js/model.js" defer></script>
+    <script src="js/view.js" defer></script>
+    <script src="js/controller.js" defer></script>
 </body>
 </html>
